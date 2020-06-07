@@ -36,15 +36,102 @@
     }
 
     body{
-      background-image: linear-gradient(to right,rgb(248, 252, 17),rgb(17, 236, 218));
+      background-color: #17f9f2;
+      background-image: linear-gradient(315deg, #17f9f2 0%, #b0f9a9 74%);
     }
 
     .navbar{
-      background-image: linear-gradient(to right,rgb(248, 252, 17),rgb(17, 236, 218));
+      background-color: #17f9f2;
+      background-image: linear-gradient(315deg, #17f9f2 0%, #b0f9a9 74%);
     }
 
     .title{
       font-family: 'Metal Mania', cursive;
+    }
+
+    .left{
+      margin-left: 160px;
+      position: static;
+    }
+
+    #dropdownMenuButton{
+      /* background-color: rgb(17, 236, 218); */
+      color: black;
+      border-style: hidden;
+      /* background-image: linear-gradient(to left,rgb(248, 252, 17),rgb(214, 46, 96)); */
+      background-color: #17f9f2;
+      background-image: linear-gradient(315deg, #17f9f2 0%, #b0f9a9 74%);
+    }
+
+    .blod_left{
+      color: black;
+    }
+
+    .dropdown-menu{
+      background-color: #17f9f2;
+      background-image: linear-gradient(315deg, #17f9f2 0%, #b0f9a9 74%);
+      color: black;
+    }
+
+    .detail_title{
+      color: brown;
+      font-family: 'Permanent Marker', cursive;
+    }
+
+    .detail_text{
+      font-family: 'Merriweather', serif;
+    }
+
+    .comment_section{
+      background-color: white;
+      margin-top: 20px;
+      font-family: 'Merriweather', serif;
+    }
+
+    .rainbow{
+  
+      margin-top: 20px;
+        /* Font options */
+      font-family: 'Pacifico', cursive;
+      text-shadow: 2px 2px 4px #000000;
+      font-size:40px;
+      
+        /* Chrome, Safari, Opera */
+      -webkit-animation: rainbow 5s infinite; 
+      
+      /* Internet Explorer */
+      -ms-animation: rainbow 5s infinite;
+      
+      /* Standar Syntax */
+      animation: rainbow 5s infinite; 
+
+      @-webkit-keyframes rainbow{
+        0%{color: orange;}	
+        10%{color: purple;}	
+        20%{color: red;}
+        30%{color: CadetBlue;}
+        40%{color: yellow;}
+        50%{color: coral;}
+        60%{color: green;}
+        70%{color: cyan;}
+        80%{color: DeepPink;}
+        90%{color: DodgerBlue;}
+        100%{color: orange;}
+      }
+
+      @keyframes rainbow{
+        0%{color: orange;}	
+        10%{color: purple;}	
+        20%{color: red;}
+        30%{color: CadetBlue;}
+        40%{color: yellow;}
+        50%{color: coral;}
+        60%{color: green;}
+        70%{color: cyan;}
+        80%{color: DeepPink;}
+        90%{color: DodgerBlue;}
+        100%{color: orange;}
+      }
     }
   </style>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -65,31 +152,23 @@
         </li>
       </ul>
     </div>
-    <ul class="nav navbar-nav navbar-right">
-        
-        {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="navbar-brand bigbrand"> <b class="bold_left">Welcome: {{user.username}}</b> </a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'blog:new_post' %}"> <b class="bold_right">New Post</b> </a>
-            </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'draft' %}"><b class="bold_right">Drafts</b></a>
-            </li>
-      
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'logout' %}"> <b class="bold_right">Log Out</b> </a>
-            </li>
-      
-          {% else %}
-            <li><a class="nav navbar-nav navbar-right" href="#"> <b class="bold_right">Log In</b> </a></li>
-          {% endif %}
-            
-    </ul>
+    <div class="dropdown">
+      {% if user.is_authenticated %}
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a><b class="bold_left">Welcome: {{user.username}}</b></a>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="nav-link" href="{% url 'blog:new_post' %}"> <b class="bold_right">New Post</b> </a>
+          <a class="nav-link" href="{% url 'draft' %}"><b class="bold_right">Drafts</b></a>
+          <a class="nav-link" href="{% url 'logout' %}"> <b class="bold_right">Log Out</b> </a>
+        </div>
+      {% else %}
+        <button type="button" class="btn"><a class="nav navbar-nav navbar-right" href="#"> <b class="bold_right">Log In</b> </a></button>
+      {% endif %}
+    </div>
   </nav>
+
     <div class="container">
         {% block body_block %}
 
