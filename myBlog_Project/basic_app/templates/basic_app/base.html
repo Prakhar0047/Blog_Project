@@ -14,23 +14,54 @@
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
 </head>
 <body>
+  <style>
+    .card-title{
+      color: brown;
+      font-family: 'Permanent Marker', cursive;
+    }
+
+    .card-text{
+      font-family: 'Merriweather', serif;
+    }
+
+    .card-body{
+      background-color: rgba(245, 245, 245, 0.671);
+    }
+
+    body{
+      background-image: linear-gradient(to right,rgb(248, 252, 17),rgb(17, 236, 218));
+    }
+
+    .navbar{
+      background-image: linear-gradient(to right,rgb(248, 252, 17),rgb(17, 236, 218));
+    }
+
+    .title{
+      font-family: 'Metal Mania', cursive;
+    }
+  </style>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="{% url 'home' %}">The Blog</a>
+    <a class="navbar-brand" href="{% url 'home' %}"> <b class="blod_left title">The Blog</b> </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="https://www.github.com">GitHub</a>
+          <a class="nav-link" href="https://www.github.com"><b class="blod_left">GitHub</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.linkedin.com">LinkedIn</a>
+          <a class="nav-link" href="https://www.linkedin.com"><b class="blod_left">LinkedIn</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'blog:about_us' %}">About Us</a>
+          <a class="nav-link" href="{% url 'blog:about_us' %}"><b class="blod_left">About Us</b></a>
         </li>
       </ul>
     </div>
@@ -42,19 +73,19 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'blog:new_post' %}"> <b class="bold_left">New Post</b> </a>
+              <a class="nav-link" href="{% url 'blog:new_post' %}"> <b class="bold_right">New Post</b> </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'draft' %}"><b class="bold_left">Drafts</b></a>
+              <a class="nav-link" href="{% url 'draft' %}"><b class="bold_right">Drafts</b></a>
             </li>
       
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'logout' %}"> <b class="bold_left">Log Out</b> </a>
+              <a class="nav-link" href="{% url 'logout' %}"> <b class="bold_right">Log Out</b> </a>
             </li>
       
           {% else %}
-            <li><a class="nav navbar-nav navbar-right" href="#"> <b class="bold_left">Log In</b> </a></li>
+            <li><a class="nav navbar-nav navbar-right" href="#"> <b class="bold_right">Log In</b> </a></li>
           {% endif %}
             
     </ul>
