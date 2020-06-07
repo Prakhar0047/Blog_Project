@@ -24,6 +24,7 @@
   <style>
     .card-title{
       color: brown;
+      text-shadow: 2px 2px 4px #000000;
       font-family: 'Permanent Marker', cursive;
     }
 
@@ -83,55 +84,21 @@
     }
 
     .comment_section{
-      background-color: white;
+      font-family: 'Pacifico', cursive;
+      font-size:40px;
       margin-top: 20px;
-      font-family: 'Merriweather', serif;
     }
 
     .rainbow{
-  
       margin-top: 20px;
-        /* Font options */
       font-family: 'Pacifico', cursive;
       text-shadow: 2px 2px 4px #000000;
       font-size:40px;
-      
-        /* Chrome, Safari, Opera */
-      -webkit-animation: rainbow 5s infinite; 
-      
-      /* Internet Explorer */
-      -ms-animation: rainbow 5s infinite;
-      
-      /* Standar Syntax */
-      animation: rainbow 5s infinite; 
+    }
 
-      @-webkit-keyframes rainbow{
-        0%{color: orange;}	
-        10%{color: purple;}	
-        20%{color: red;}
-        30%{color: CadetBlue;}
-        40%{color: yellow;}
-        50%{color: coral;}
-        60%{color: green;}
-        70%{color: cyan;}
-        80%{color: DeepPink;}
-        90%{color: DodgerBlue;}
-        100%{color: orange;}
-      }
-
-      @keyframes rainbow{
-        0%{color: orange;}	
-        10%{color: purple;}	
-        20%{color: red;}
-        30%{color: CadetBlue;}
-        40%{color: yellow;}
-        50%{color: coral;}
-        60%{color: green;}
-        70%{color: cyan;}
-        80%{color: DeepPink;}
-        90%{color: DodgerBlue;}
-        100%{color: orange;}
-      }
+    .foot{
+      font-family: 'Pacifico', cursive;
+      font-size: 20px; 
     }
   </style>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -174,7 +141,7 @@
 
         {% endblock body_block %}
     </div>
-    <footer class="py-3 bg-grey">
+    <footer class="py-3 bg-grey foot">
         <p class="m-0 text-dark text-center ">Copyright &copy; Prakhar</p>
     </footer>
 </body>
