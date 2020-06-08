@@ -8,4 +8,5 @@ urlpatterns = [
     path('draft',views.DraftListView.as_view(), name='draft'),
     path('logout', views.logout_request, name='logout'),
     path('', views.PostList.as_view(), name='home'),
+    path("login", views.login_request, name="login"),
 ]
