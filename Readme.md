@@ -1,3 +1,8 @@
+---
+
+
+---
+
 <h1 id="the-blog-project">The Blog Project</h1>
 <p>This is a BLOG project. Just like other blog it has diffrent features like Login-Logout, New Post, GitHub(Jump Link), Linkedin(Jump Link), About, Draft, Comment. It also uses mySQL DB.</p>
 <h1 id="prerequisties">Prerequisties</h1>
@@ -6,7 +11,7 @@
 <li>Python Version :- 3.8.3</li>
 <li>DJango Version :- 3.0</li>
 <li>PIP Version :- Any</li>
-<li>mySQL Client :- Compatible with Python</li>
+<li>mySQL Client :- mysqlclient-1.4.6-cp38-cp38-win32</li>
 <li>XAMPP :- Any</li>
 </ol>
 <blockquote>
@@ -133,6 +138,14 @@ First open your XAMPP Control Panel and start apache and mysql servers.</p>
 </code></pre>
 <p>Run code <code>pyhton manage.py migrate</code><br>
 Now you are all set to go.</p>
+<h3 id="error">Error</h3>
+<p>While using XAMPP you might tackle and error Server Closed Unexpectedly.<br>
+Just Change the port number for sql server from XAMPP control panel &gt; config &gt;my.ini<br>
+If you still tackle an error that is because of User Account Control (UAC).</p>
+<ul>
+<li>Either Deactivate UAC with msconfig</li>
+<li>Or Install it in any other Drive (Expect C drive)</li>
+</ul>
 <h2 id="built-with">Built With</h2>
 <ol>
 <li>DJango</li>
@@ -149,3 +162,4 @@ Now you are all set to go.</p>
 <li>DJango Documentaion</li>
 <li>MySQL Documentation</li>
 </ul>
+
