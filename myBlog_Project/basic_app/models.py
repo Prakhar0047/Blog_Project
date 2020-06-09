@@ -1,10 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+
 STATUS = (
     (0,"Draft"),
     (1,"Publish"),
 )
+
+# Model For Post
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -15,7 +18,7 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
-        ordering = ['-created_on']
+        ordering = ['-created_on'] # Sorting Them w.r.t created_on field
 
     def __str__(self):
         return self.title
@@ -25,7 +28,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='comments')
+    post = models.ForeignKey(Post,on_delete=models.CASCADE,related_name='comments')  # Inheriting Other Model
     name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()

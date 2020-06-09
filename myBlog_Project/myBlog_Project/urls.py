@@ -1,6 +1,10 @@
+# Import Required Files Here
+
 from django.contrib import admin
 from django.urls import path, include
 from basic_app import views
+
+# These Are Just Like Path For Webpages.
 
 urlpatterns = [
     path('admin/', admin.site.urls),
