@@ -6,7 +6,7 @@
 <li>Python Version :- 3.8.3</li>
 <li>DJango Version :- 3.0</li>
 <li>PIP Version :- Any</li>
-<li>mySQL Client :- mysqlclient-1.4.6-cp38-cp38-win32</li>
+<li>mySQL Client :- Compatible with Python</li>
 <li>XAMPP :- Any</li>
 </ol>
 <blockquote>
