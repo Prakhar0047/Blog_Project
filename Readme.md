@@ -1,8 +1,3 @@
----
-
-
----
-
 <h1 id="the-blog-project">The Blog Project</h1>
 <p>This is a BLOG project. Just like other blog it has diffrent features like Login-Logout, New Post, GitHub(Jump Link), Linkedin(Jump Link), About, Draft, Comment. It also uses mySQL DB.</p>
 <h1 id="prerequisties">Prerequisties</h1>
@@ -154,4 +149,3 @@ Now you are all set to go.</p>
 <li>DJango Documentaion</li>
 <li>MySQL Documentation</li>
 </ul>
-
