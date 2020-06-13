@@ -3,15 +3,11 @@ from basic_app.models import Post, Comment
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
-# Form For Adding New Post
-
 class PostForm(forms.ModelForm):
 
     class Meta():
         model = Post
         fields = ('title','slug','content','author','status')
-
-# Form For Adding New User
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())

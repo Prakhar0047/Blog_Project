@@ -1,7 +1,6 @@
 from django.urls import path
 from basic_app import views
 
-# Define App Name For More Open URL Mapping and Generalization
 app_name = 'blog'
 
 urlpatterns = [

@@ -12,37 +12,41 @@ class About_us(TemplateView):
     template_name = "basic_app/about_us.html"
 
 
-# Post List View (Home Page)
-
 class PostList(ListView):
     queryset = Post.objects.all().filter(status=1).order_by('-created_on')
     template_name = "basic_app/post_list.html"
 
-
-# Detailed Version Of Post
 
 class PostDetail(DetailView):
     model = Post
     template_name = 'basic_app/post_detail.html'
 
 
-# View For drafts
-
 class DraftListView(ListView):
     queryset = Post.objects.all().filter(status=0).order_by('-created_on')
     template_name = "basic_app/post_draft_list.html"
 
 
-# View For Creating Post
 class CreatePostView(CreateView):
     form_class = PostForm
     model = Post
 
 
-# Login View 
+# def user_login(request):
+    
+#     username = request.POST('username')
+#     password = request.POST('password')
+#     user = authenticate(request, username=username, password=password)
+#     if user is not None:
+#         login(request, user)
+#         return redirect('home')
+#     else:
+#         return HttpResponse("Either Username or Password Is Incorrect.")
+
+
 def login_request(request):
-    if request.method == 'POST': # Means User Is Giving Some Input
-        form = AuthenticationForm(request=request, data=request.POST) # Checks All Details
+    if request.method == 'POST':
+        form = AuthenticationForm(request=request, data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
